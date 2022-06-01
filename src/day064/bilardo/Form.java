@@ -5,6 +5,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class Form extends JFrame {
     private JButton btnCiz,btnDolu;
@@ -27,7 +28,10 @@ public class Form extends JFrame {
         setLocation(new Point((screenSize.width-getWidth())/2,(screenSize.height-getHeight())/2));
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-        btnCiz=new JButton("Çiz");
+        initialize();
+
+
+/*        btnCiz=new JButton("Çiz");
         btnCiz.setSize(80,20);
         btnCiz.setLocation(20,20);
         btnCiz.addActionListener((e)->cizimYap(e));
@@ -54,9 +58,24 @@ public class Form extends JFrame {
         p2.setLocation(300,200);
         p2.setAci(30);
         p2.setDoluMu(true);
-        add(p2);
+        add(p2);*/
 
 
+
+
+
+    }
+
+    private Top t1;
+    private void initialize() {
+        //Top 1 nesnesi
+        for (int i = 0; i < 100; i++) {
+            int x= ThreadLocalRandom.current().nextInt(0,getWidth());
+            int y= ThreadLocalRandom.current().nextInt(0,getHeight());
+            Top t=new Top();
+            t.setLocation(x,y);
+            add(t);
+        }
     }
 
     private boolean doluBosFlag;
