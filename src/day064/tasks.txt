@@ -1,0 +1,40 @@
+
+Geri doğru sayan bir sayaç geliştirilecektir. Aşağıdaki görevleri
+yerine getiriniz.
+
+Task 1:
+
+1. Anonim bir Runnable nesnesi oluşturunuz. (İsteyen Lambda expression kullanabilir)
+    Runnable downCounter= ......
+2. Runnable şu şeklde implemente edilecektir.
+    - do ... while döngüsü ile bir başlangıç değerinden geriye doğru sıfıra kadar sayacaktır.
+    - Gösterimi print ile aralarında bir boşluk olacak şekilde yan yana
+    - 1000 ms uyutulmalıdır.
+    - Döngüden çıkınca boş bir println olmalı
+3. yeni bir Thread nesnesi oluşturulara downCounter teslim edilmeli ve start edilmeldir.
+
+
+Task 2:
+
+1. DownCounter isimli bir sınıf tasarlayınız.
+2. Sınıf Thread sınıfından extend edilmelidir.
+3. Sınıfın private int count isimli alanı olmalıdır.
+4. Sadece count alanını parametre olarak alan bir constructor oluşturunuz.
+5. Thread'den gelen run metodunu override ediniz. implementastyonu Task 1'deki
+ile aynı olacaktır.
+6. Constructor içerisinde start edilmelidir.
+7. main metodu içerisinde yeni bir DownCounter nesnesi oluşturulup program gözlenmelidir.
+8. 10,20 ve 30 başlangıç değerleriyle 3 adet DownCounter nesnesi oluşturup gözlemleyiniz.
+
+Task 3:
+
+1. Bir Timer nesnesi oluşturunuz.
+2. task isimli Anonim bir TimerTask oluşturunuz. run metodunu aşağıdaki gibi
+implemente ediniz.
+    - metodun dışında int bir count değişkenine 10 assign ediniz.
+    - metodun içinde count değişkeni sıfırdan küçük ise cancel() metodunu çağırınız.
+    - print ile birer boşluklu olarak sayaç değerini yazdırınız.
+3. Timer nesnesinin scheduleAtFixedRate metoduna task'i, gecikme olarak sıfır değerini
+ve period olarak da 1000 ms parametre olarak geçiniz.
+4. Çıktıları gözlemleyiniz.
+
